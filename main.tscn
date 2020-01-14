@@ -4,10 +4,10 @@
 [ext_resource path="res://bedroom.JPG" type="Texture" id=2]
 [ext_resource path="res://characters/porter/porter.tscn" type="PackedScene" id=3]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 172.043, 83.6915 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 1729.2, 10 )
 
 [node name="Node2D" type="Node2D"]
@@ -24,7 +24,7 @@ scale = Vector2( 1.16135, 1.16135 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="background/StaticBody2D2"]
 position = Vector2( -152.074, -419.288 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="background"]
 position = Vector2( -2333.74, 288.516 )
@@ -32,11 +32,10 @@ scale = Vector2( 1.16135, 1.16135 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="background/StaticBody2D"]
 position = Vector2( 1951.88, 42.7643 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1301.91, 978.422 )
-scale = Vector2( 1, 1 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
 current = true
