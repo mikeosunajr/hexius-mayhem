@@ -14,7 +14,7 @@
 [ext_resource path="res://characters/porter/walk_l_2.png" type="Texture" id=12]
 [ext_resource path="res://characters/porter/stand_d.png" type="Texture" id=13]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
@@ -57,7 +57,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 21.608, 14.7039 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
@@ -66,9 +66,9 @@ script = ExtResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 7.06762, -200.421 )
 scale = Vector2( 0.271093, 0.271093 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "stand_d"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.21243, -13.4824 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )

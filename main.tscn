@@ -1,43 +1,26 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://bedroom.jpg" type="Texture" id=2]
 [ext_resource path="res://characters/porter/porter.tscn" type="PackedScene" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 172.043, 83.6915 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 1729.2, 10 )
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 3836, 1072.4, 3.99902, 1073.4, 9.79895, 897, 654.799, 924, 2503.2, 898.2, 3835, 899.4, 2468.2, 927.2, 1026.8, 900, 1240.8, 900, 1244.8, 918, 1014.8, 931, 599.799, 897, 604.799, 919, 1614.8, 912, 1618.8, 896, 2146.8, 900, 2173.8, 931, 2417.2, 945.2, 2240.8, 951 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 0, 6 ), PoolIntArray( 7, 8, 9, 10 ), PoolIntArray( 2, 11, 12 ), PoolIntArray( 13, 14, 15, 16 ), PoolIntArray( 17, 6, 0 ), PoolIntArray( 9, 13, 16, 18, 10 ), PoolIntArray( 18, 17, 0 ), PoolIntArray( 2, 12, 3 ), PoolIntArray( 10, 18, 0 ), PoolIntArray( 10, 0, 3 ), PoolIntArray( 10, 3, 3 ) ]
+outlines = [ PoolVector2Array( 9.79895, 897, 599.799, 897, 604.799, 919, 654.799, 924, 654.799, 924, 1014.8, 931, 1026.8, 900, 1240.8, 900, 1244.8, 918, 1614.8, 912, 1618.8, 896, 2146.8, 900, 2173.8, 931, 2240.8, 951, 2417.2, 945.2, 2468.2, 927.2, 2503.2, 898.2, 3835, 899.4, 3836, 1072.4, 3.99902, 1073.4 ) ]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 1922.9, 539.835 )
+position = Vector2( 1922.9, 540.835 )
 scale = Vector2( 1.00157, 1.00156 )
 texture = ExtResource( 2 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="background"]
-position = Vector2( -936.159, 769.025 )
-scale = Vector2( 1.16135, 1.16135 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="background/StaticBody2D2"]
-position = Vector2( -152.074, -419.288 )
-shape = SubResource( 1 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="background"]
-position = Vector2( -2333.74, 288.516 )
-scale = Vector2( 1.16135, 1.16135 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="background/StaticBody2D"]
-position = Vector2( 1951.88, 42.7643 )
-shape = SubResource( 2 )
-
-[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
+[node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1301.91, 978.422 )
 
-[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 limit_left = 0
 limit_top = 0
@@ -45,3 +28,12 @@ limit_right = 3840
 limit_bottom = 1080
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 1 )
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2( 0, 1 )
+texture_mode = -229163008
