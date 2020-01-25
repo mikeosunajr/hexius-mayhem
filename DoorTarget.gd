@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -11,9 +11,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-func _input(event):
+func _input_event(viewport, event, shape_idx):
 	if event.is_action_pressed('click'):
-		var path = $Floor.get_simple_path($Player.position, get_global_mouse_position())
-		$Path.points = path
-		$Player.path = path
+		get_tree().change_scene("res://hall.tscn")
