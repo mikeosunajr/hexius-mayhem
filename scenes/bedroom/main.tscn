@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://main.gd" type="Script" id=1]
-[ext_resource path="res://bedroom.jpg" type="Texture" id=2]
+[ext_resource path="res://scenes/main.gd" type="Script" id=1]
+[ext_resource path="res://scenes/bedroom/bedroom.jpg" type="Texture" id=2]
 [ext_resource path="res://characters/porter/porter.tscn" type="PackedScene" id=3]
-[ext_resource path="res://DoorTarget.gd" type="Script" id=4]
+[ext_resource path="res://scenes/bedroom/DoorTarget.gd" type="Script" id=4]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 3836, 1072.4, 3.99902, 1073.4, 9.79895, 897, 654.799, 924, 2503.2, 898.2, 3835, 899.4, 2468.2, 927.2, 1026.8, 900, 1240.8, 900, 1244.8, 918, 1014.8, 931, 599.799, 897, 604.799, 919, 1614.8, 912, 1618.8, 896, 2146.8, 900, 2173.8, 931, 2417.2, 945.2, 2240.8, 951 )

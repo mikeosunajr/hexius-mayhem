@@ -1,4 +1,4 @@
-extends CollisionPolygon2D
+extends "res://scenes/main.gd"
 
 # Declare member variables here. Examples:
 # var a = 2

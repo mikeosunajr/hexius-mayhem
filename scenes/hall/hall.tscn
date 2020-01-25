@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://hall.gd" type="Script" id=1]
-[ext_resource path="res://hall.jpg" type="Texture" id=2]
+[ext_resource path="res://scenes/hall/hall.gd" type="Script" id=1]
+[ext_resource path="res://scenes/hall/hall.jpg" type="Texture" id=2]
 [ext_resource path="res://characters/porter/porter.tscn" type="PackedScene" id=3]
 
 [sub_resource type="NavigationPolygon" id=1]

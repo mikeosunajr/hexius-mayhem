@@ -13,4 +13,4 @@ func _ready():
 #	pass
 func _input_event(viewport, event, shape_idx):
 	if event.is_action_pressed('click'):
-		get_tree().change_scene("res://hall.tscn")
+		get_tree().change_scene("res://scenes/hall/hall.tscn")
