@@ -1,15 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/bedroom/bedroom.jpg" type="Texture" id=2]
 [ext_resource path="res://characters/porter/porter.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/bedroom/DoorTarget.gd" type="Script" id=4]
 [ext_resource path="res://scenes/dialog/dialog.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/bedroom/Cat.gd" type="Script" id=6]
+[ext_resource path="res://cat1.png" type="Texture" id=7]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 3836, 1072.4, 3.99902, 1073.4, 9.79895, 897, 654.799, 924, 2503.2, 898.2, 3835, 899.4, 2468.2, 927.2, 1026.8, 900, 1240.8, 900, 1244.8, 918, 1014.8, 931, 599.799, 897, 604.799, 919, 1614.8, 912, 1618.8, 896, 2146.8, 900, 2173.8, 931, 2417.2, 945.2, 2240.8, 951 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 0, 6 ), PoolIntArray( 7, 8, 9, 10 ), PoolIntArray( 2, 11, 12 ), PoolIntArray( 13, 14, 15, 16 ), PoolIntArray( 17, 6, 0 ), PoolIntArray( 9, 13, 16, 18, 10 ), PoolIntArray( 18, 17, 0 ), PoolIntArray( 2, 12, 3 ), PoolIntArray( 10, 18, 0 ), PoolIntArray( 10, 0, 3 ), PoolIntArray( 10, 3, 3 ) ]
 outlines = [ PoolVector2Array( 9.79895, 897, 599.799, 897, 604.799, 919, 654.799, 924, 654.799, 924, 1014.8, 931, 1026.8, 900, 1240.8, 900, 1244.8, 918, 1614.8, 912, 1618.8, 896, 2146.8, 900, 2173.8, 931, 2240.8, 951, 2417.2, 945.2, 2468.2, 927.2, 2503.2, 898.2, 3835, 899.4, 3836, 1072.4, 3.99902, 1073.4 ) ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 63.8848, 49.3221 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -43,7 +48,6 @@ position = Vector2( 0, 1 )
 texture_mode = -229163008
 
 [node name="Door" type="Area2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Door"]
@@ -51,4 +55,16 @@ polygon = PoolVector2Array( 3114, 465.4, 3340, 468.4, 3346, 861.4, 3134, 858.4 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Control" parent="UI" instance=ExtResource( 5 )]
+[node name="Dialog" parent="UI" instance=ExtResource( 5 )]
+
+[node name="Cat" type="StaticBody2D" parent="."]
+input_pickable = true
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cat"]
+position = Vector2( 1426, 618 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Cat"]
+position = Vector2( 1424, 620 )
+texture = ExtResource( 7 )
